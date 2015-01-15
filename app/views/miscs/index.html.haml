@@ -1,0 +1,26 @@
+%h1#message Listing miscs
+
+-# #miscs
+  -# #h1 "#{misc.first.babble}"
+
+
+
+%table
+  %thead
+    %tr
+      %th Babble
+      %th
+      %th
+      %th
+
+  %tbody#misc_table
+    - @miscs.each do |misc|
+      %tr
+        %td= misc.babble
+        %td= link_to 'Show', misc
+        %td= link_to 'Edit', edit_misc_path(misc)
+        %td= link_to 'Destroy', misc, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Misc', new_misc_path

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Text:
+  = @phrase.text
+%p
+  %b Category:
+  = @phrase.category
+
+= link_to 'Edit', edit_phrase_path(@phrase)
+\|
+= link_to 'Back', phrases_path
